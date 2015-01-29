@@ -1,0 +1,12 @@
+
+<%= @message %>
+
+<form id="create_event_form" action="/events/create" method="POST">
+
+  <input type="text" name="event[title]" placeholder="Event Title"><br>
+  <input type="text" id="datepicker" name="event[date]" placeholder="Event Date"><br>
+  <input type="text" name="event[organizer_email]" placeholder="Organizer Email"><br>
+  <input type="text" name="event[organizer_name]" placeholder="Organizer Name"><br>
+  <input name="submit_event" type="submit" value="Create Event">
+
+</form>
