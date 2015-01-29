@@ -16,9 +16,8 @@ DBC Phase 2 Assessment Study Guide and Blank Forms/App Skeletons
 
 7. JQuery: Basic Rules and Examples
 
-8. AJAX:
-* https://github.com/bison-2014/behavior-drill-tabbed-interface-challenge
-* https://github.com/bison-2014/ajaxifying-hacker-news-challenge
+8. AJAX: https://github.com/bison-2014/behavior-drill-tabbed-interface-challenge
+https://github.com/bison-2014/ajaxifying-hacker-news-challenge
 
 9. Validations
 
