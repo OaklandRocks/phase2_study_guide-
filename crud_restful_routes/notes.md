@@ -8,10 +8,12 @@
 PUT/PATCH and DELETE are not supported by browsers
 You need to fake out your browser in order to use them
 
+```html
 <form action=”/dogs” method=”POST”>
   <input type=”hidden” name=”_method” value=”DELETE”>
   <input type=”submit” value=”Delete this dog”>
 </form>
+```
 
 
 | CRUD | Request Type | Path | Purpose |
