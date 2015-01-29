@@ -41,4 +41,16 @@ Two resources
 | Update | PUT | /restaurants/:restaurant_id/reviews/:id | update resources |
 | Delete | DELETE | /restaurants/:restaurant_id/reivews/:id | delete resources |
 
+HELPER FILE:
+
+For sessions/user log-in shit:
+
+```ruby
+helpers do
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+end
+```
+
 
