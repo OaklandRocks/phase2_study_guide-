@@ -11,6 +11,7 @@ DBC Phase 2 Assessment Study Guide and Blank Forms/App Skeletons
 4. Partials: Example including HTML/JQuery/Routes from Survey Challenge
 
 5. JavaScript: Object Oriented and Object Literal examples with spec
+  JavaScript Syntax Hints Documentation: http://wps.aw.com/wps/media/objects/2234/2287950/javascript_refererence.pdf
 
 6. CSS: Styling, Selectors, Tabs, Floats, HTML Radio Button Example
 
