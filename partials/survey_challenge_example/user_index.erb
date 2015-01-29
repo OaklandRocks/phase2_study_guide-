@@ -1,0 +1,42 @@
+
+<a href="/logout" class=" link_button logout">Logout</a>
+
+<div class="container">
+<h1> Welcome <%=@user.name%>!</h1>
+
+<h2> Your Surveys </h2>
+<!-- </div> -->
+<table class="user_survey_table">
+  <tr>
+    <th>Survey Title</th>
+    <th>Date Created</th>
+    <th>Survey Results</th>
+    <th>Send to More People</th>
+    <th>Delete Survey</th>
+  </tr>
+  <tr>
+     <%@surveys.each do |survey|%>
+     <td><%=survey.title%></td>
+     <td><%=survey.created_at%></td>
+     <td><a class="link_button" href="/surveys/<%= survey.id %>/results"> RESULTS</a></td>
+     <td><a class="link_button" href='#'> SEND TO MORE PEOPLE</a></td>
+
+     <td><form action="/surveys/<%=survey.id%>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="link_button" value="Delete Survey"></form></td>
+    </tr>
+     <%end%>
+</table>
+
+<br><br><br>
+
+<div id="container">
+  <a id="new_survey" class="link_button" href="#empty">Create a new survey</a>
+</div>
+
+<div id="empty"></div>
+
+<br><br><br>
+
+</div>
+
