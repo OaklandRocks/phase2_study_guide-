@@ -26,4 +26,15 @@ You need to fake out your browser in order to use them
 | Update | PUT | /resources/:id | update resources |
 | Delete | DELETE | /resources/:id | delete resources |
 
+Two resources
+| CRUD | Request Type | Path | Purpose |
+| -----| ------- | ------- | -----------|
+| Read | GET | /restaurants/:restaurant_id/reviews| list resources (index page) |
+| Read | GET | /restaurants/:restaurant_id/reviews/new | form for resource |
+| Create | POST | /restaurants/:restaurant_id/reviews| new resource |
+| Read | GET | /restaurants/:restaurant_id/reviews/:id | specific resource (show page) |
+| Read | GET | /restaurants/:restaurant_id/reviews/:id/:edit | edit form |
+| Update | PUT | /restaurants/:restaurant_id/reviews/:id | update resources |
+| Delete | DELETE | /restaurants/:restaurant_id/reivews/:id | delete resources |
+
 
