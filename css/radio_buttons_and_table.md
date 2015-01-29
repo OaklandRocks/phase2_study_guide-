@@ -1,3 +1,4 @@
+```html
 <form action="/surveys/<%=@survey.id%>/responses" id="response_show" method="POST">
   <%@ survey.questions.map do |que| %>
 <%= que.question_text%><br><br>
@@ -8,13 +9,16 @@
 
 <input type="submit" class="link_button" value="Submit Response">
 </form>
+```
 
-<!-- By giving the name attribute a specific question.id, you're grouping the radio buttons together. -->
-<!-- This is great because then you can only answer one radio button per question, but more than one radio button in one survey -->
+By giving the name attribute a specific question.id, you're grouping the radio buttons together
+This is great because then you can only answer one radio button per question, but more than one radio button in one survey
 
 
-<!-- Iterating through an array of SQL objects in a table -->
 
+Iterating through an array of SQL objects in a table
+
+```html
 <table class="user_survey_table">
   <tr>
     <th>Survey Title</th>
@@ -36,3 +40,4 @@
     </tr>
      <%end%>
 </table>
+```
