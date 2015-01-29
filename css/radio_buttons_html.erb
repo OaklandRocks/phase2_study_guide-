@@ -1,0 +1,13 @@
+<form action="/surveys/<%=@survey.id%>/responses" id="response_show" method="POST">
+  <%@ survey.questions.map do |que| %>
+<%= que.question_text%><br><br>
+<% que.options.each do |opt| %>
+<input type="radio" name="question[<%= que.id %>]" value="<%=opt.id%>"><%=opt.option_text %><br><br>
+<%end%>
+<%end%>
+
+<input type="submit" class="link_button" value="Submit Response">
+</form>
+
+<!-- By giving the name attribute a specific question.id, you're grouping the radio buttons together. -->
+<!-- This is great because then you can only answer one radio button per question, but more than one radio button in one survey -->
