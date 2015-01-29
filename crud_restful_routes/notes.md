@@ -54,3 +54,66 @@ end
 ```
 
 
+Example Routes from Multi-User Blog Challenge
+
+```ruby
+enable :sessions
+
+get '/' do
+  @user = User.find_by(id: session[:user_id])
+  @all_entries = Entry.all
+  erb :index
+end
+
+get '/signout' do
+  session.clear
+  redirect '/'
+end
+
+get '/user/:id/entries' do
+  @user = User.find_by(id: session[:user_id])
+  @user_entries = @user.entries
+  erb :user_entry
+end
+
+get '/entry/:id/edit' do
+  @entry = Entry.find_by(id: params[:id])
+  erb :edit
+end
+
+get '/entry/new' do
+  erb :new_post
+end
+
+post '/entry' do
+  entry = Entry.create(user_id: session[:user_id],title: params[:title], content: params[:content])
+  redirect '/'
+end
+
+put '/entry/:id/edit' do
+  user = User.find_by(id: session[:user_id])
+
+  @entry = Entry.find_by(id: params[:id])
+  @entry.update_attributes(title: params[:title], content: params[:content])
+  redirect "/user/#{user.id}/entries"
+end
+
+delete '/entry/:id/delete' do
+  @entry = Entry.find_by(id: params[:id])
+  @entry.destroy
+  redirect '/'
+end
+
+post '/login' do
+  @current_user = User.find_by(username: params[:username])
+  if @current_user = User.authenticate(params[:username], params[:password])
+    session[:user_id] = @current_user.id
+    redirect '/'
+  else
+    @login_error = "Invalid username or password"
+    erb :index
+  end
+end
+```
+
+
